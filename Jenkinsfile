@@ -7,6 +7,11 @@ pipeline {
         bat 'mvn compile'
       }
     }
+      stage('Test') {
+      steps {
+        bat 'mvn test'
+      }
+    }
     
   }
 }
