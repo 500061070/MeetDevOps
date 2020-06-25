@@ -1,19 +1,22 @@
 pipeline{
     agent any
-    environment{
-        PATH = "opt/maven3/bin:$PATH"
+    tools{
+        jdk "Java-1.8"
+        maven "Maven-3.6"
     }
     
     stages{
-      stage("Git Checkout"){
+      stage("Clone sources"){
         steps{
           git url: 'https://github.com/500061070/MeetDevOps'
           }
         }
       
-        stage("Maven Build"){
+        stage("Execute Maven"){
         steps{
-          sh "mvn clean package"
+            script{
+                rtMaven.run pom: 'pom.xml',goals: 'clean package',buildInfo: buildInfo
+            }
           }
         }
       }
