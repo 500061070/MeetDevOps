@@ -17,6 +17,11 @@ pipeline {
         bat 'mvn deploy'
       }
     }
+      stage('tom') {
+      steps {
+        bat 'mvn tomcat9:run'
+      }
+    }
     
   }
 }
