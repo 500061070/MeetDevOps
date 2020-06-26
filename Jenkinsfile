@@ -24,7 +24,7 @@ pipeline {
     }
       stage('tom') {
       steps {
-        bat 'mvn tomcat9:deploy'
+        bat 'mvn tomcat7:deploy'
       }
     }
     
