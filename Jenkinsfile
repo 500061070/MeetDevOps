@@ -5,7 +5,7 @@ pipeline {
       stage('Analyize') {
       steps {
         bat 'mvn sonar:sonar -Dsonar.host.url=http://localhost:9000 
-  -Dsonar.login=the-generated-token'
+  -Dsonar.login=22646a19192340ab4e588feecd1f377388bf34a8'
       }
     }
     stage('Compile') {
